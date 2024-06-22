@@ -1,8 +1,6 @@
 package tests;
 
 import io.restassured.RestAssured;
-import io.restassured.http.Headers;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import lib.BaseTestCase;
@@ -18,7 +16,7 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class UserAuthTest extends BaseTestCase {
+public class UserAuth extends BaseTestCase {
 
     String cookie;
     String header;
@@ -27,8 +25,8 @@ public class UserAuthTest extends BaseTestCase {
     @BeforeEach
     public void loginUser(){
         Map<String, String> authData = new HashMap<>();
-        authData.put("email", "vinkotov@example.com");
-        authData.put("password", "1234");
+        authData.put("email", "oleg@example.com");
+        authData.put("password", "123");
 
         Response responseGetAuth = RestAssured.given().body(authData).post("https://playground.learnqa.ru/api/user/login").andReturn();
         this.cookie = this.getCookie(responseGetAuth,"auth_sid");
