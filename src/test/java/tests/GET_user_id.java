@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserGet extends BaseTestCase {
+public class GET_user_id extends BaseTestCase {
 
     @Test
     public void testGetUserDataNotAuth(){

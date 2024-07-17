@@ -11,11 +11,15 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserEdit extends BaseTestCase {
+public class PUT_user_id extends BaseTestCase {
     @Test
     public void testEditJustCreatedTest() {
 
-        //GENERATE USER
+//        String cookie = this.getCookie(responseGetAuth,"auth_sid");
+//        String header = this.getHeader(responseGetAuth, "x-csrf-token");
+//        String userIdOnAuth = this.getIntFromJson(responseGetAuth,"user_id");
+
+        //GENERATE USER DATA
         Map<String, String> userData = DataGenerator.getRegistrationData();
 
         //CREATE USER
@@ -30,9 +34,9 @@ public class UserEdit extends BaseTestCase {
         String userId = responseCreateAuth.getString("id");
 
         //LOGIN
-        Map <String, String> authData = new HashMap<>();
-        authData.put("email", userData.get("email"));
-        authData.put("password", userData.get("password"));
+//        Map <String, String> authData = new HashMap<>();
+//        authData.put("email", userData.get("email"));
+//        authData.put("password", userData.get("password"));
 
         Response responseGetAuth = RestAssured
                 .given()
