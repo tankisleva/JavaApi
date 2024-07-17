@@ -34,9 +34,9 @@ public class PUT_user_id extends BaseTestCase {
         String userId = responseCreateAuth.getString("id");
 
         //LOGIN
-//        Map <String, String> authData = new HashMap<>();
-//        authData.put("email", userData.get("email"));
-//        authData.put("password", userData.get("password"));
+        Map <String, String> authData = new HashMap<>();
+        authData.put("email", userData.get("email"));
+        authData.put("password", userData.get("password"));
 
         Response responseGetAuth = RestAssured
                 .given()
